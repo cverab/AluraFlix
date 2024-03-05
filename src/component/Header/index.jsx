@@ -1,6 +1,6 @@
 import React from "react"
 import LogoMain from "../LogoMain"
-import Boton from "../Boton"
+import { NuevoVideo } from "../Boton"
 import styled from "styled-components"
 import { useLocation, Link } from "react-router-dom";
 
@@ -15,26 +15,19 @@ const HeaderDiv = styled.header`
     border: 1px solid #000;
     border-bottom: 0.125rem solid var(--color-primary-medium);
 `
-const NuevoVideo = styled(Boton)`
-    color: #FFF;
-    border: 1px solid var(--color-gray-light);
-    background: var(--color-black-dark);
-`
 const Header = () => {
     const ruta = useLocation();
     if (ruta.pathname === '/') {
         return (
             <HeaderDiv>
                 <LogoMain />
-                <Link to="/nuevovideo">
-                    <NuevoVideo valor="Nuevo video" />
-                </Link>
+                <Link to="/nuevovideo"><NuevoVideo valor="Nuevo video" /></Link>
             </HeaderDiv>
         )
     }
     return (
         <HeaderDiv>
-            <LogoMain />
+            <Link to="/"><LogoMain /></Link>
         </HeaderDiv>
     )
 }

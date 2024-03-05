@@ -1,31 +1,29 @@
 import React from "react"
 import styled from "styled-components"
 
-const FieldTextareaDiv = styled.textarea`
-    width: 100%;
-    height: 11.6875rem;
+const FieldColorDiv = styled.input`
+    height: 2rem;
     margin:2.19rem 0;
-    border-radius: 0.25rem;
+    width: 100%;
+    align-self: center;
     background: var(--color-gray-medium);
     color: var(----color-gray-dark);
-    align-self: center;
     font-family: var(--roboto);
-    font-size: 1.125rem;
+    font-size: 0.75rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    resize: none;
+    border-radius: 0rem 0rem 0.25rem 0.25rem;
     ::placeholder{
-        color: var(--color-gray-light);
+        color: var(--color-gray-ligth);
         font-family: var(--roboto);
-        font-size: 1.125rem;
+        font-size: 0.75rem;
         font-style: normal;
         font-weight: 300;
         line-height: normal;
     }
 `
-const FieldTextarea = (props) => {
-    return <FieldTextareaDiv placeholder={props.placeholder}></FieldTextareaDiv>
+const FieldColor = (props) => {
+    return <FieldColorDiv type="color" placeholder={props.placeholder}></FieldColorDiv>
 }
-
-export default FieldTextarea
+export default FieldColor

@@ -10,6 +10,7 @@ const Card = styled.img`
     background: url(miniatura.png), lightgray 50%;
     background-position: 50% 50%;
     background-size: cover;
+    margin-right: 1rem;
     `
 export const VideoCardMain = styled(Card)`
     width: 40.375rem;

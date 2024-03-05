@@ -6,13 +6,10 @@ import styled from "styled-components"
 
 const BannerDiv = styled.div`
     display: flex;
-    /* width: 82.0625rem; */
-    /* height: 19.5rem; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* width: 90rem; */
-    height: 52rem;
+    height: auto;
     flex-shrink: 0;
     border: 1px solid #000;
     background: url(1669559000581.png), rgba(0, 18, 51, 0.56);
@@ -24,13 +21,13 @@ const BannerDiv = styled.div`
 const Contenido = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 85rem;
     height: 20.84888rem;
     flex-shrink: 0;
     padding-top: 13rem;
+    margin-bottom: 2rem;
 `
 const ContenidoTexto = styled.div`
-    width: 41.5rem;
+    width: 50%;
     height: 19.0625rem;
     flex-shrink: 0;
     padding-top: 3rem;
@@ -44,7 +41,6 @@ const Encabezado = styled.h1`
     padding-bottom: 0.56rem;
 `
 const Parrafo = styled.p`
-    width: 41.3125rem;
     height: 6.875rem;
     flex-shrink: 0;
     font-size: 1.125rem;

@@ -14,11 +14,26 @@ const BotonDiv = styled.button`
     line-height: 1.5rem;
     cursor: pointer;
 `
-const Boton = (props) => {
-    return <BotonDiv>{props.valor}</BotonDiv>
+const Boton = ({ valor, ...rest }) => {
+    return <BotonDiv{...rest}>{valor}</BotonDiv>
 }
-// export const GuardarVideo = styled(Boton)`
-// `
-// export const BorrarVideo = styled(Boton)`
-// `
+export const NuevoVideo = styled(Boton)`
+color: #FFF;
+border: 2px solid var(--color-gray-light);
+background: var(--color-black-dark);
+`
+export const GuardarVideo = styled(Boton)`
+color: #FFF;
+background: var(--color-primary-medium);
+margin-right: 2.5rem;
+`
+export const BorrarVideo = styled(Boton)`
+color: var(--color-black-dark);
+background: var(--color-black-lighter);
+margin-right: auto;
+`
+export const NuevaCategoria = styled(Boton)`
+color: #FFF;
+background: var(--color-primary-medium);
+`
 export default Boton

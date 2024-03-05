@@ -1,24 +1,34 @@
 import React from "react"
-import styled from "styled-components"
-import VideoCard from "../VideoCard"
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import VideoCard from "../VideoCard";
 
-const CarruselDiv = styled.div`
-    display: flex;
-    flex-wrap: nowrap;
-    width: 82.0625rem;
-    height: 19.5rem;
-    /* justify-content: center; */
-    align-items: center;
-    flex-shrink: 0;
-    background: var(--color-black-dark);
-`
+const settings = {
+    dots: false, // Ocultar indicadores de paginación
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    swipeToSlide: true, // Habilitar el desplazamiento al deslizar con el ratón o el dedo
+    variableWidth: true,
+};
+
 const Carrusel = () => {
-    return <CarruselDiv>
-        <VideoCard />
-        <VideoCard />
-        <VideoCard />
-        <VideoCard />
-    </CarruselDiv>
-}
+    return (
+        <Slider {...settings}>
+            <div>
+                <VideoCard />
+            </div>
+            <div>
+                <VideoCard />
+            </div>
+            <div>
+                <VideoCard />
+            </div>
+            {/* Agregar más elementos según sea necesario */}
+        </Slider>
+    );
+};
 
 export default Carrusel
