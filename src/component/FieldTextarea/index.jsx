@@ -15,6 +15,10 @@ const FieldTextareaDiv = styled.textarea`
     font-weight: 300;
     line-height: normal;
     resize: none;
+    outline: none;
+    :focus{
+        border-bottom: 0.25rem inset #2A7AE4;
+    }
     ::placeholder{
         color: var(--color-gray-light);
         font-family: var(--roboto);
@@ -25,7 +29,16 @@ const FieldTextareaDiv = styled.textarea`
     }
 `
 const FieldTextarea = (props) => {
-    return <FieldTextareaDiv placeholder={props.placeholder}></FieldTextareaDiv>
+    return <FieldTextareaDiv
+        name={props.imputName}
+        placeholder={props.inputPlaceholder}
+        value={props.inputValue}
+        onChange={props.inputOnChange}
+        onBlur={props.inputOnBlur}
+        ref={props.inputRef}
+        style={props.inputStyle}
+        required
+    />
 }
 
 export default FieldTextarea

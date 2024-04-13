@@ -14,8 +14,8 @@ const BotonDiv = styled.button`
     line-height: 1.5rem;
     cursor: pointer;
 `
-const Boton = ({ valor, ...rest }) => {
-    return <BotonDiv{...rest}>{valor}</BotonDiv>
+const Boton = ({ buttonOnClick, valor, ...rest }) => {
+    return <BotonDiv{...rest} onClick={buttonOnClick}>{valor}</BotonDiv>
 }
 export const NuevoVideo = styled(Boton)`
 color: #FFF;

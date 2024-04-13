@@ -6,7 +6,6 @@ import { useLocation, Link } from "react-router-dom";
 
 const HeaderDiv = styled.header`
     display: flex;
-    /* width: 90rem; */
     justify-content: space-between;
     flex-shrink: 0;
     background: var(--color-black-dark);

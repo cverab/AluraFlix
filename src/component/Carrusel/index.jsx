@@ -1,34 +1,54 @@
-import React from "react"
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import VideoCard from "../VideoCard";
+import React, { useEffect, useState } from 'react';
+import { fetchData, videosUrl } from '../../servicios/api.js'
+import VideoCard from "../VideoCard"
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import './style.css'
 
-const settings = {
-    dots: false, // Ocultar indicadores de paginación
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    swipeToSlide: true, // Habilitar el desplazamiento al deslizar con el ratón o el dedo
-    variableWidth: true,
+const responsive = {
+    superLargeDesktop: {
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3,
+        slidesToSlide: 3
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
 };
 
-const Carrusel = () => {
+const Carrusel = (props) => {
+
+    const [video, setVideo] = useState([]);
+    useEffect(() => {
+        fetchData(videosUrl)
+            .then((video) => setVideo(video))
+            .then(console.log('%cVideos cargados con éxito', `color: ${props.borderColor}; font-weight: bold; text-shadow: 0.5px 0.5px 0.5px gray;`))
+            .catch((error) => console.error('Error al cargar videos:', error));
+    }, []);
+
+    const items = video
+        .filter((video) => video.categoria === props.categoriaCarrusel)
+        .map((video) => (
+            <div key={video.id}>
+                <a href={video.linkVideo} target="_blank" rel="noreferrer" >
+                    <VideoCard videoImg={video.linkImagen} borderColor={props.borderColor} />
+                </a>
+            </div>
+        ));
+
     return (
-        <Slider {...settings}>
-            <div>
-                <VideoCard />
-            </div>
-            <div>
-                <VideoCard />
-            </div>
-            <div>
-                <VideoCard />
-            </div>
-            {/* Agregar más elementos según sea necesario */}
-        </Slider>
+        <Carousel responsive={responsive} infinite={false} swipeable={true} draggable={true} itemClass="carouselItem">
+            {items.map((video) => (video))}
+        </Carousel>
     );
 };
-
-export default Carrusel
+export default Carrusel;

@@ -16,6 +16,21 @@ const FieldSelectDiv = styled.select`
     border-radius: 0rem 0rem 0.25rem 0.25rem;
 `
 const FieldSelect = (props) => {
-    return <FieldSelectDiv placeholder={props.placeholder}></FieldSelectDiv>
+    return <FieldSelectDiv
+        name={props.selectName}
+        placeholder={props.selectPlaceholder}
+        value={props.selectValue}
+        onChange={props.selectOnChange}
+        onBlur={props.selectOnBlur}
+        ref={props.selectRef}
+        required
+    >
+        <option disabled selected>Elige una categoría</option>
+        {props.data.map((categoria) => (
+            <option key={categoria.id} value={categoria.nombre}>
+                {categoria.nombre}
+            </option>
+        ))}
+    </FieldSelectDiv>
 }
 export default FieldSelect

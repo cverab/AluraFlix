@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     --color-inovation: rgba(255, 140, 42, 1);
     --color-ux: rgba(220, 110, 190, 1);
     --color-data-science: rgba(156, 211, 59, 1);
-    --color-black-dark: #000000E5;
+    --color-black-dark: rgba(0,0,0,0.9);
     --color-black-medium: rgba(0, 0, 0, 0.6);
     --color-black-light: rgba(0, 0, 0, 0.5);
     --color-black-lighter: rgba(158, 158, 158, 1);
@@ -25,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
 }
 body {
     font-family: var(--roboto);
+    margin: 0;
+    padding: 0;
 }
 h1 {
     color: var(--color-gray-light);

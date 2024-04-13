@@ -7,13 +7,18 @@ const FieldTextDiv = styled.input`
     width: 100%;
     align-self: center;
     background: var(--color-gray-medium);
-    color: var(----color-gray-dark);
+    color: var(--color-gray-dark);
     font-family: var(--roboto);
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    border-radius: 0rem 0rem 0.25rem 0.25rem;
+    border: 0;
+    border-radius: 0.25rem;
+    outline: none;
+    :focus{
+        border-bottom: 0.25rem inset #2A7AE4;
+    }
     ::placeholder{
         color: var(--color-gray-light);
         font-family: var(--roboto);
@@ -24,6 +29,18 @@ const FieldTextDiv = styled.input`
     }
 `
 const FieldText = (props) => {
-    return <FieldTextDiv placeholder={props.placeholder}></FieldTextDiv>
-}
+    return (
+        <FieldTextDiv
+            name={props.imputName}
+            placeholder={props.inputPlaceholder}
+            type='text'
+            value={props.inputValue}
+            onChange={props.inputOnChange}
+            onBlur={props.inputOnBlur}
+            ref={props.inputRef}
+            style={props.inputStyle}
+            required
+        />
+    );
+};
 export default FieldText

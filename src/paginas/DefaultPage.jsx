@@ -1,8 +1,14 @@
 import React from "react"
 import Banner from "../component/Banner"
+import Categorias from "../component/Categorias"
 
 const DefaultPage = () => {
-    return <Banner />
-}
+    return (
+        <>
+            <Banner />
+            <Categorias />
+        </>
+    )
+};
 
-export default DefaultPage
+export default DefaultPage;

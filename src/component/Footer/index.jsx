@@ -3,7 +3,6 @@ import styled from "styled-components"
 import LogoMain from "../LogoMain"
 
 const Card = styled.div`
-    /* width: 95rem; */
     height: 5.125rem;
     flex-shrink: 0;
     background: rgba(0,0,0,0.9);
