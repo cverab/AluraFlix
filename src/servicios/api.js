@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
 
-const baseUrl = 'https://json-server-vercel-cverab.vercel.app';
+const baseUrl = 'https://json-server-vercel-steel-sigma.vercel.app';
 export const catsUrl = `${baseUrl}/categorias`;
 export const videosUrl = `${baseUrl}/videos`;
 
